@@ -1,3 +1,5 @@
 # Notebooks
 
-This folder contains Colab notebooks for each exercise block shown [here](https://github.com/pySTEPS/ERAD-nowcasting-course-2022/blob/hands-on-users/hands-on-session-users/session_overview.pdf). The notebooks are designed to be run sequentially (i.e. running each notebook will run the previous ones). When running these notebooks, please make a copy of them to your personal Google Drive.
+This folder contains Colab notebooks for each exercise block and some helper notebooks which will allow the exercise notebooks to install pysteps and download the data. To get started you should create a new directory in your drive called "Colab Notebooks" and upload all the `helper_` notebook files there. After uploading the helper notebooks you should be able to run each notebook by opening the notebook in github and pressing the colab button at the top.
+
+NOTE: Once you start running the notebooks they will request access to your google drive, with some pretty scary looking permissions requests. We don't have a way to turn that down but this should be fine. If you are worried about the permissions, or if you have limited storage space left on your drive, please just make a new google account specifically for these excercises.
