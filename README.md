@@ -28,5 +28,32 @@ The main goal of the Open Nowcasting course is to focus on practical aspects of 
 # Prerequisites
 
 *Participants need to bring their own laptop (Linux, Windows, Mac)*. 
-Below we give more information on the things that one needs to prepare for the short course:
-- [TO DO]
+
+The exercises in this short course will be done by using Google Colab notebooks. Therefore the attendees are expected to create a Google account before the session and copy the example notebooks to their Google Drive. The material will be provided in the [GitHub repository](https://github.com/pySTEPS/ERAD-nowcasting-course-2022).
+
+## 1. Create a Google account
+
+If you do not have a Google account yet, create it [here](https://accounts.google.com/signin/v2/identifier?flowName=GlifWebSignIn&flowEntry=ServiceLogin).
+
+## 2. Install Google Chrome
+
+For the best experience, we recommend using [Google Chrome](https://www.google.com/chrome) for this session. In many Linux distributions, the browser is known as [Chromium](https://www.chromium.org/Home), and it can be installed through the distribution's package management system. [Firefox](https://www.mozilla.org), [Microsoft Edge](http://www.microsoft.com/en-us/windows/microsoft-edge) and [Safari](http://www.apple.com/safari) should also work, but they might not support all functionalities needed for using the Google services.
+
+## 3. Clone GitHub Repositories and copy notebooks to Colab
+
+This step is required for running the Colab notebooks shared through the [GitHub repository](https://github.com/pySTEPS/ERAD-nowcasting-course-2026). Sign in to your Google account, go to [Colab](https://colab.research.google.com/?utm_source=scs-index) and run the following commands in a new notebook.
+
+    # mount your Google drive to access it from Colab
+    import os
+    from google.colab import drive
+    drive.mount("mnt")
+    %cd mnt/MyDrive
+    # clone the repository from GitHub
+    !git clone https://github.com/pySTEPS/ERAD-nowcasting-course-2026.git
+    # create notebook directory (if it doesn't already exist)
+    if not os.path.exists('Colab Notebooks'):
+        !mkdir 'Colab Notebooks'
+    # copy the course notebooks to the above folder
+    !cp -r ERAD-nowcasting-course-2026 'Colab Notebooks'
+
+Now you can open the example notebooks in Colab through "File" (in the top bar) > "Open Notebook" > [look for the specific file you want to get started with] or open it directly from your Google Drive.
