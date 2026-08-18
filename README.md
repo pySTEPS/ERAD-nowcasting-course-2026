@@ -2,7 +2,7 @@
 The main goal of the Open Nowcasting course is to focus on practical aspects of nowcasting, for both (operational) users and developers. Participants will learn theory on nowcasting, blending with NWP and nowcasting with machine-learning tools. This is combined with hands-on sessions using the open-source library pysteps, to bring the theory into practice. The course will be useful for both researchers and operational meteorologists, with either no or average nowcasting experience. A part of the Open Nowcasting course will be devoted to gathering the nowcasting community around pysteps to discuss challenges and future developments. This course forms the second part of a two-day training sequence and uses the processed datasets from the Open Source Software Tools for Radar Data Processing course on Saturday as one of the inputs for the nowcasting applications.
 **When:** Sunday August 23, 2026, from 09:00 - 17:00 local time.
 
-**Where:** Hydrometeorological Service of Serbia (RHHS), Kneza Višeslava 66, Belgrade, Serbia.
+**Where:** Hydrometeorological Service of Serbia (RHMSS), Kneza Višeslava 66, Belgrade, Serbia.
 
 **Registration:** [ERAD26 Academy](https://erad2026.rs/courses) [registration is closed]
 
