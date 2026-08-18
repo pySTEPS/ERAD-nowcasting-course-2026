@@ -8,7 +8,7 @@ The main goal of the Open Nowcasting course is to focus on practical aspects of 
 
 ## Tutors
 
-[Ruben Imhoff](https://github.com/RubenImhoff) - [Jenna Ritvanen](https://github.com/ritvje) - [Lesley De Cruz](https://github.com/ladc) - [Mats Veldhuizen](https://github.com/mats-knmi) - Miguel Aldana
+[Ruben Imhoff](https://github.com/RubenImhoff) - [Jenna Ritvanen](https://github.com/ritvje) - [Lesley De Cruz](https://github.com/ladc) - [Mats Veldhuizen](https://github.com/mats-knmi) - [Miguel Aldana](https://github.com/AldanaMF)
 
 # Program
 
