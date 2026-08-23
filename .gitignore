@@ -1,0 +1,40 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# --- Virtual environments ---
+# uv sync creates .venv here; uv.lock is committed instead.
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+.virtual_documents/
+# NOTE: notebook outputs are deliberately NOT stripped or ignored here -- the
+# notebooks under notebooks/solutions/ ship with their outputs committed.
+
+# --- Course data downloaded or generated at runtime ---
+# pysteps.datasets.download_pysteps_data("pysteps_data") writes into the
+# notebook's working directory (~450 MB unpacked).
+pysteps_data/
+# pysteps.datasets.create_default_pystepsrc() may write a local config file.
+pystepsrc
+pystepsrc.[0-9]*
+# Animation written by the last cell of block 05.
+blended_nowcast_*.gif
+# netCDF nowcast written by the exporter cell of block 04 (deterministic).
+extrapolation_nowcast.nc
+# Climatological skill cache written by pysteps.blending.steps.forecast,
+# whose outdir_path_skill defaults to ./tmp/.
+tmp/
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
