@@ -1,0 +1,59 @@
+[project]
+name = "erad-nowcasting-course-2026"
+version = "2026.0.0"
+description = "Local environment for the ERAD26 Academy short course 'Open Precipitation Nowcasting'"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+# 3.14 is excluded on purpose: cartopy publishes no wheels for it yet, and there
+# is no source build without system GEOS/GDAL headers. Verified on 3.12 and 3.13.
+requires-python = ">=3.12,<3.14"
+
+dependencies = [
+    # --- core nowcasting stack (blocks 01-04) ---
+    "pysteps",
+    "cartopy",
+    "pyproj",
+    "netCDF4",
+    "zarr",
+    "xarray",
+    "s3fs",
+    "rioxarray",
+
+    # --- NWP blending (block 05) ---
+    "pygrib",
+    "pysteps-nwp-importers",
+
+    # --- MLCast bonus exercise (block 06) ---
+    "mlcast-datasets",
+
+    # --- pysteps optional dependencies ---
+    # Pre-installed on Colab, so the notebooks never install them; needed locally.
+    # Without opencv, motion.get_method("LK") raises MissingOptionalDependency.
+    "opencv-python-headless",
+    "h5py",
+    "pywavelets",
+    "pandas",
+    "scikit-image",
+    "scikit-learn",
+
+    # --- scientific / plotting / notebook runtime ---
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pillow",
+    "dask",
+    "jupyterlab",
+    "ipykernel",
+]
+
+[tool.uv]
+# The repository is course material, not an importable package: install the
+# dependencies into the environment, but do not try to build this project.
+package = false
+
+[tool.uv.sources]
+# The RHMSS NWP importer used in block 05 lives on an unreleased branch.
+# uv.lock pins the exact commit, so re-run `uv lock --upgrade-package
+# pysteps-nwp-importers` when the branch moves.
+pysteps-nwp-importers = { git = "https://github.com/pySTEPS/pysteps-nwp-importers", branch = "add_importer_rhmss_nwp" }
