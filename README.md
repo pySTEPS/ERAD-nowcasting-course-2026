@@ -78,6 +78,33 @@ OpenCV, which pysteps needs for Lucas-Kanade optical flow). It picks Python 3.12
 by default; 3.13 also works, while 3.14 is not yet supported because cartopy
 publishes no wheels for it.
 
+## System libraries
+
+You do **not** need the GEOS, GDAL, HDF5 or ecCodes development packages that
+the notebooks install with `apt-get` on Colab. Locally, cartopy, rasterio,
+netCDF4 and pygrib all come as binary wheels with those libraries bundled.
+
+You **do** need a C compiler, because pysteps publishes no wheels and builds two
+Cython extensions (`_vet` and `_proesmans`) during `uv sync`:
+
+| Platform | What to install                                             |
+|----------|-------------------------------------------------------------|
+| Linux    | `gcc` (`build-essential` on Debian/Ubuntu, `gcc` on Fedora)  |
+| macOS    | Xcode command line tools: `xcode-select --install`           |
+| Windows  | [Microsoft C++ Build Tools][msvc]                            |
+
+[msvc]: https://visualstudio.microsoft.com/visual-cpp-build-tools/
+
+Two platform caveats affect **block 05 only**, which reads GRIB through pygrib:
+
+- **Windows:** pygrib publishes no Windows wheels, so `uv sync` cannot install
+  it. Use WSL, or run block 05 on Colab.
+- **macOS:** the pygrib wheels are built for macOS 15 and newer. On an older
+  macOS there is no wheel to install.
+
+Apart from pygrib, pysteps is the only dependency without a wheel on any of the
+three platforms, so the compiler is the one system-level thing you need.
+
 Open any notebook from the JupyterLab file browser and run it top to bottom.
 Note that the first notebook you run downloads ~450 MB of pysteps example data
 into the notebook folder; this happens once and is git-ignored.
