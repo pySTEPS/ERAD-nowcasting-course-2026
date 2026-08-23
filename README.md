@@ -57,3 +57,27 @@ This step is required for running the Colab notebooks shared through the [GitHub
     !cp -r ERAD-nowcasting-course-2026 'Colab Notebooks'
 
 Now you can open the example notebooks in Colab through "File" (in the top bar) > "Open Notebook" > [look for the specific file you want to get started with] or open it directly from your Google Drive.
+
+# Running the notebooks locally (alternative to Colab)
+
+Colab is the recommended route for the course, but every notebook also runs on a
+local checkout. Each notebook detects its environment and skips the Colab-only
+steps (Google Drive mounting and the `apt-get`/`pip` installs) when it is not
+running on Colab.
+
+You need [uv](https://docs.astral.sh/uv/getting-started/installation/). Then:
+
+    git clone https://github.com/pySTEPS/ERAD-nowcasting-course-2026.git
+    cd ERAD-nowcasting-course-2026
+    uv sync
+    uv run jupyter lab
+
+`uv sync` creates a `.venv` with every dependency pinned in `uv.lock`, including
+the ones Colab pre-installs and the notebooks therefore never mention (notably
+OpenCV, which pysteps needs for Lucas-Kanade optical flow). It picks Python 3.12
+by default; 3.13 also works, while 3.14 is not yet supported because cartopy
+publishes no wheels for it.
+
+Open any notebook from the JupyterLab file browser and run it top to bottom.
+Note that the first notebook you run downloads ~450 MB of pysteps example data
+into the notebook folder; this happens once and is git-ignored.
